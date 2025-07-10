@@ -1,5 +1,3 @@
-import { FirebaseApp } from '@angular/fire/app';
-import * as firebase from 'firebase/compat';
 import { Cliente } from '../cliente/cliente';
 import { Hamburguer } from '../produtos/hamburger';
 import { HotDog } from '../produtos/hot-dog';

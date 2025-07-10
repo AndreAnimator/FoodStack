@@ -6,6 +6,7 @@ import { NavController } from '@ionic/angular';
     selector: 'app-custom-header',
     templateUrl: './custom-header.component.html',
     styleUrls: ['./custom-header.component.scss'],
+    standalone: false,
 })
 export class CustomHeaderComponent implements OnInit {
 

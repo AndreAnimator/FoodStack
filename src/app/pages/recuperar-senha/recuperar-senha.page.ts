@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
   selector: 'app-recuperar-senha',
   templateUrl: './recuperar-senha.page.html',
   styleUrls: ['./recuperar-senha.page.scss'],
+  standalone: false,
 })
 export class RecuperarSenhaPage implements OnInit {
 

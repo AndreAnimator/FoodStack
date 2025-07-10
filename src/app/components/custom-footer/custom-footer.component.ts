@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
   selector: 'app-custom-footer',
   templateUrl: './custom-footer.component.html',
   styleUrls: ['./custom-footer.component.scss'],
+  standalone: false,
 })
 export class CustomFooterComponent implements OnInit {
 

@@ -7,6 +7,7 @@ import { HamburgerPage } from './hamburger.page';
 import { CustomFooterModule } from 'src/app/components/custom-footer/custom-footer.module';
 import { CustomHeaderModule } from 'src/app/components/custom header/custom-header.module';
 
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 @NgModule({
     imports: [
         CommonModule,
@@ -19,6 +20,7 @@ import { CustomHeaderModule } from 'src/app/components/custom header/custom-head
     ],
     declarations: [
         HamburgerPage
-      ]
+      ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class HamburgerPageModule { }

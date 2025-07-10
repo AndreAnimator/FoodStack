@@ -15,6 +15,6 @@ import { LoaderPage } from './loader.page';
     IonicModule,
     LoaderPageRoutingModule
   ],
-  declarations: [LoaderPage]
+  declarations: [LoaderPage],
 })
 export class LoaderPageModule {}

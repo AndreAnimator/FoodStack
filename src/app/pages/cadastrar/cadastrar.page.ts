@@ -6,6 +6,7 @@ import { ClienteService } from 'src/app/services/cliente-service.service';
     selector: 'app-cadastrar',
     templateUrl: './cadastrar.page.html',
     styleUrls: ['./cadastrar.page.scss'],
+    standalone: false,
 })
 export class cadastrarPage implements OnInit {
 

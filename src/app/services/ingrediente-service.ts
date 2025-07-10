@@ -1,20 +1,19 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Ingredient } from '../models/ingredientes/ingredientes';
-
+//começa a mudança de banco de dados aqui
 
 @Injectable({
     providedIn: 'root'
 })
 export class IngredientService {
 
-    private ingredientsCollection: AngularFirestoreCollection<Ingredient>;
+    /* private ingredientsCollection: AngularFirestoreCollection<Ingredient>; */
     private ingredients: Observable<Ingredient[]>;
 
-    constructor(private firestore: AngularFirestore, private db: AngularFireDatabase) {
+    constructor() {
+        /*
         this.ingredientsCollection = this.firestore.collection<Ingredient>('ingredients');
         this.ingredients = this.ingredientsCollection.snapshotChanges().pipe(
             map(actions => {
@@ -25,8 +24,9 @@ export class IngredientService {
                 });
             })
         );
+        */
     }
-
+/*
     createIngredient(ingredient: Ingredient): Promise<void> {
         const id = this.firestore.createId();
         return this.firestore.doc(`ingredients/${id}`).set({
@@ -37,13 +37,16 @@ export class IngredientService {
             calories: ingredient.calories
         });
     }
+*/
 
     getIngredients(): Observable<Ingredient[]> {
         return this.ingredients;
     }
 
     addIngredient(ingredient: Ingredient) {
+        /*
         return this.firestore.collection<Ingredient>('ingredients').add(ingredient);
+        */
     }
 
     getIngredientsByCategory(category: string): Observable<Ingredient[]> {
@@ -53,11 +56,14 @@ export class IngredientService {
     }
 
     getTipo() {
+        /*
         return this.db.list('tipo').valueChanges();
+        */
     }
 
     getCategoria(selectedValue: string) {
-        return this.db.list('categoria', ref => ref.orderByChild('parent').equalTo(selectedValue)).valueChanges();
+
+        // return this.db.list('categoria', ref => ref.orderByChild('parent').equalTo(selectedValue)).valueChanges();
     }
 
 }
