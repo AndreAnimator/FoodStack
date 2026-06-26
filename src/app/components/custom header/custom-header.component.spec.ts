@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 
 import { CustomHeaderComponent } from './custom-header.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
+import { HamburgComponent } from '../hamburg/hamburg.component';
 
 describe('CustomHeaderComponent', () => {
   let component: CustomHeaderComponent;

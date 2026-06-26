@@ -9,7 +9,6 @@ import { LoginPageRoutingModule } from './login-routing.module';
 import { LoginPage } from './login.page';
 import { CustomHeaderModule} from 'src/app/components/custom header/custom-header.module';
 import { CustomFooterModule } from 'src/app/components/custom-footer/custom-footer.module';
-
 @NgModule({
     imports: [
         CommonModule,
@@ -17,7 +16,7 @@ import { CustomFooterModule } from 'src/app/components/custom-footer/custom-foot
         IonicModule,
         LoginPageRoutingModule,
         CustomHeaderModule,
-        CustomFooterModule
+        CustomFooterModule,
     ],
     declarations: [
         LoginPage,
