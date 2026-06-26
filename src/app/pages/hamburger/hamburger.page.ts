@@ -1,22 +1,25 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonSlides } from '@ionic/angular';
+import { IonicSlides} from '@ionic/angular';
 import { Ingredient } from 'src/app/models/ingredientes/ingredientes';
 import { Hamburguer } from 'src/app/models/produtos/hamburger';
 import { FavoritosService } from 'src/app/services/favoritos.service';
+import Swiper from 'swiper';
+import { SwiperSlide } from 'swiper/element';
 
 @Component({
     selector: 'app-hamburger',
     templateUrl: './hamburger.page.html',
     styleUrls: ['./hamburger.page.scss'],
+    standalone: false,
 })
 
 export class HamburgerPage {
     constructor(private favoritosService: FavoritosService) { }
     @ViewChild('myMenu') menu: any;
 
-    @ViewChild('mySlider') slider: IonSlides;
+    @ViewChild('mySlider') slider: SwiperSlide;
 
-    @ViewChild('slides', { static: true }) slides: IonSlides;
+    @ViewChild('slides', { static: true }) slides: Swiper;
 
     slideOpts = {
         initialSlide: 0,

@@ -7,6 +7,7 @@ import { ClienteService } from 'src/app/services/cliente-service.service';
     selector: 'app-registrar',
     templateUrl: './registrar.page.html',
     styleUrls: ['./registrar.page.scss'],
+    standalone: false,
 })
 export class RegistrarPage {
     mensagemErro: string = '';

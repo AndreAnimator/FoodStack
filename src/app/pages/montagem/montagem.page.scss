@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 #main{
     position:relative;
     height: 100%;
@@ -10,9 +11,11 @@
 }
 
 .montagem-hamburguer{
+    background-image: url("../../../assets/img/background-burgue.png");
     margin-bottom: 1rem;
     padding-left: 0;
     padding-right: 0;
+    min-height:98vh;
 }
 
 .container-fluid{
@@ -95,8 +98,15 @@ h2{
 }
 
 .nome-lanche{
+    border-top: 3px solid #581a27;
+    border-left: 3px solid #581a27;
+    border-right: 3px solid #581a27;
+    padding-top: 30px;
+    padding-left: 30px;
+    color:rgb(238, 205, 177);
+    background-color: #581a27;
+    border-radius: 5px 0px 0px 0px;
     text-transform: uppercase;
-    color: #212529;
     text-align: left;
     padding: 10px;
     label{
@@ -105,17 +115,54 @@ h2{
         margin-right: 10px;
     }
     input{
+        color: #581a27;
         margin-right:-10px;
     }
 }
 
 .titulo-ingredientes{
     border: 3px solid #581a27;
-    padding-top: 30px;
-    padding-left: 30px;
+    text-align: center;
     color:rgb(238, 205, 177);
     background-color: #581a27;
-    border-radius: 5px 0px 0px 0px;
+}
+
+.separacao-titulo{
+    border-left: 3px solid #581a27;
+    border-right: 3px solid #581a27;
+    color:rgb(238, 205, 177);
+    background-color: #581a27;
+    padding-left: 130px;
+    margin-top: -10px;
+    margin-bottom: -25px;
+    .icon-separado{
+        align-content: center;
+        height: 50px;
+        content: url("../../../assets/icon/pontos.svg");
+    }
+}
+
+.separacao-ingrediente{
+    border-left: 3px solid #581a27;
+    border-right: 3px solid #581a27;
+    color:rgb(238, 205, 177);
+    background-color: #581a27;
+    margin-top: -50px;
+    display: inline;
+    display: flex;
+    flex-wrap: wrap;
+    .icon-swirl-esquerdo{
+        position: relative;
+        transform: scaleX(-1);
+        height: 50px;
+        content: url("../../../assets/icon/swirl.svg");
+    }
+    .icon-swirl-direito{
+        margin-top: -50px;
+        padding-left:262px;
+        height: 50px;
+        content: url("../../../assets/icon/swirl.svg");
+    }
 }
 
 .ingredientes{
@@ -138,6 +185,20 @@ h2{
         text-transform: uppercase;
         font-weight: 505;
         color: #581a27;
+        display: inline;
+        display: flex;
+        flex-wrap: wrap;
+        .hide, .show {
+            font-family: "Bitstream Vera Mono";
+            text-transform: lowercase;
+            font-weight: 505;
+            color: #581a27;
+            position: relative;
+        }
+        
+        .hide:hover, .show:hover {
+            color: #C5AFB3;
+        }
     }
     .lista-ingredientes{
         margin-bottom: 0;
@@ -190,10 +251,10 @@ h2{
                     float:inline-end;
 
                     .icone-ingrediente{
+                        
                         background-color: rgb(238, 205, 177);
                         border-radius:10px;
                         text-align: center;
-                        @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
                         font-family: 'Robot Mono', monospace;
                         font-size: 20px;
                         font-weight: 500;
@@ -241,7 +302,7 @@ h2{
     }
     .visualizador-corpo{
         margin-top: 0px;
-        background-color: rgb(226, 148, 83);;
+        background-color: rgb(226, 148, 83);
         padding: 10px 30px 30px 30px;
         border-style: solid;
         border-color: #581a27;
@@ -278,13 +339,39 @@ h2{
     }
 }
 
+.titulo-balanca-calorias{
+    text-align: center;
+    color: #581a27;
+    font-weight: bold;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
 .balanca-calorias{
     padding: 30px;
     display: flex;
     flex-wrap: wrap;
+    .imagem-balanca{
+        display: block;
+        margin: auto;
+        margin-top: -30px;
+        height: 80px;
+        content: url("../../../assets/icon/balanca.svg");
+    }
+    .calorias-container{
+        display: block;
+        margin: auto;
+        margin-top:-10px;
+        border: 3px solid #581a27;
+        border-radius: 5px;
+        text-align: center;
+        color:rgb(238, 205, 177);
+        background-color: #581a27;
+    }
     .visualizador-calorias{
         border-radius: 5px;
-        background-color: #16781e;
+        background-color: rgb(238, 205, 177);
+        color: #581a27;
         .contador-calorias{
             position: relative;
             margin-right: 10px;
@@ -303,5 +390,10 @@ h2{
         font-weight: 1000;
         flex: 0 0 50%;
         max-width: 66.666667%;
+    }
+    .botao-salvar{
+        --color: #581a27;
+        font-weight: bold;
+        --background: rgb(226, 148, 83);
     }
 }

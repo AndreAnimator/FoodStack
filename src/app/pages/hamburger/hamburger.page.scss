@@ -1,55 +1,118 @@
+#main{
+  background-image: url("../../../assets/img/background-burgue.png");
+  position:relative;
+  min-height:98vh;
+  height: 100%;
+}
 ion-slides {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 50%;
-    max-height: 500px;
-  }
-  
-  .slide-container {
-    display: flex;
-    justify-content: center;
-    height: 100%;
-  }
-  
-  ion-slide {
-    width: 10px;
-    height: 350px;
-    margin-right: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .pizza-item {
-    white-space: nowrap;
-  }
-  
-  ion-img.pizza-img {
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  ion-card {
-    margin: 0 auto;
-    max-width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50%;
+  max-height: 500px;
+}
+
+.slide-container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+ion-slide {
+  height: 350px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pizza-item {
+  white-space: nowrap;
+}
+
+ion-img.pizza-img {
+  height: 200px;
+  object-fit: cover;
+}
+
+ion-card {
+  margin: 0 auto;
+  max-width: 90%;
+  text-align: center;
+}
+
+ion-card-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+ion-list {
+  margin: 10px 0;
+}
+
+ion-item {
+  --padding-start: 0;
+}
+
+p {
+  font-size: 18px;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+.col-xl-3 {
+  max-width: 25%;
+  position: relative;
+  width: 100%;
+  padding: 15px;
+}
+
+.container-lista{
+  .nome-lanche{
+    border: 3px solid #581a27;
+    padding-top: 30px;
     text-align: center;
-  }
-  
-  ion-card-title {
-    font-size: 24px;
+    color:rgb(238, 205, 177);
+    background-color: #581a27;
+    border-radius: 5px 5px 0px 0px;
+    text-transform: uppercase;
     font-weight: bold;
   }
-  
-  ion-list {
-    margin: 10px 0;
+  .lista-ingrediente{
+    background-color: rgb(226, 148, 83);;
+    padding: 10px 30px 30px 30px;
+    border-style: solid;
+    border-color: #581a27;
+    border-width: 0px 3px 3px 3px;
+    border-radius: 0px 0px 5px 5px;
+    max-height: 622.8px;
+    overflow-y:scroll;
+    ul{
+      list-style: none;
+    }
+    li{
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 0%;
+    }
+    .nome-ingrediente{
+      border-bottom: 2px dotted rgb(176, 78, 41);
+      display:inline;
+      display: flex;
+      flex-wrap: wrap;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      color: rgb(176, 78, 41);
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 1.2;
+    }
   }
-  
-  ion-item {
-    --padding-start: 0;
+  .calorias{
+    text-transform: uppercase;
+    font-weight: 505;
+    color: #581a27;
   }
-  
-  p {
-    font-size: 18px;
-  }
-  
+}

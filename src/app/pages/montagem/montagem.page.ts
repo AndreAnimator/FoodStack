@@ -11,6 +11,7 @@ import { FavoritosService } from 'src/app/services/favoritos.service';
     selector: 'app-montagem',
     templateUrl: './montagem.page.html',
     styleUrls: ['./montagem.page.scss'],
+    standalone: false,
 })
 export class MontagemPage implements OnInit {
     constructor(private dataService: DadosService, private favoritosService: FavoritosService) {

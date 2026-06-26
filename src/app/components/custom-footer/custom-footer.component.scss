@@ -72,6 +72,18 @@
                 margin-top: 1rem;
                 padding-left: 0;
                 font-size: 26px;
+                .icon{
+                    line-height: 1;
+                    margin-right: 0.75rem;
+                    display:inline-block;
+                    height: 26px;
+                }
+                .icon-twitter{
+                    content: url("../../../assets/icon/twitter-icon.svg");
+                }
+                .icon-instagram{
+                    content: url("../../../assets/icon/instagram-icon.svg");
+                }
             }
             ul {
                 list-style: none;

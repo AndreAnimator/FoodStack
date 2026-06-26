@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:900');
 #main
 {
     position:relative;
@@ -17,7 +18,6 @@
     line-height: 170%;
     /*padding-bottom: 40px;*/
 
-    @import url('https://fonts.googleapis.com/css?family=Roboto:900');
     .carousel {
     height: 480px;
     overflow: hidden;
@@ -157,7 +157,7 @@
         cursor: pointer;
         border-width: 5px 5px 0 0;
         border-style: solid;
-        border-color: #fafafa;
+        border-color: #581a27;
         opacity: 0.35;
         outline: 0;
         z-index: 3;
@@ -353,12 +353,16 @@
                     display: block;
                     margin: 0 0 1rem;
                     .img-container{
-                        border: 3px solid #581a27;
                         background-position: 0 0;
                         position: relative;
                         border-radius: 5px;
                         width: 320px;
                         height: 320px;
+                        :hover{
+                            transform: scale(1.05);
+                            transition: all .15s ease-out;
+                            cursor: pointer;
+                        }
 
                         .img{
                             position: absolute;
@@ -381,6 +385,7 @@
                     text-transform: uppercase;
                     display: flex;
                     .titulo-lanche{
+                        font-family: "Bitstream Vera Mono";
                         color:#581a27;
                         height: 38px;
                         width: 100%;

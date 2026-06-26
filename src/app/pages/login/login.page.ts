@@ -6,6 +6,7 @@ import { ClienteService } from 'src/app/services/cliente-service.service';
     selector: 'app-login',
     templateUrl: './login.page.html',
     styleUrls: ['./login.page.scss'],
+    standalone: false,
 })
 export class LoginPage implements OnInit {
 

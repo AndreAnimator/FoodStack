@@ -4,24 +4,24 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <div id="pagina-recuperar" class="container">
-    <div class="cabecario">
-      <h1 class="titulo">Recuperar senha</h1>
-      <h2 class="subtitulo">Insira seu email e enviaremos um link para resetar sua senha.</h2>
+  <body id="main">
+    <div id="pagina-recuperar" class="container">
+      <div class="form-recuperar">
+        <h1 class="titulo">Recuperar senha</h1>
+        <h2 class="subtitulo">Insira seu email e enviaremos um link para resetar sua senha.</h2>
+        <form id="recuperar-usuario">
+          <div class="caixa-preenchimento">
+            <label for="email-usuario">Email</label>
+            <input id="email-usuario" class="controle-form" type="email" value="" name="usuario[email]" placeholder="Email" required>
+          </div>
+            <input class="btn btn-success btn-block" type="submit" value="recuperar" (click)="login()">
+            <p class="texto-centrado">- ou -</p>
+            <p class="texto-centrado">
+              Volte à página de <a [routerLink]="['/login']" class="link-enderecado">login</a>
+            </p>
+        </form>
+      </div>
     </div>
-    <div class="form-recuperar">
-      <form id="recuperar-usuario">
-        <div class="caixa-preenchimento">
-          <label for="email-usuario">Email</label>
-          <input id="email-usuario" class="controle-form" type="email" value="" name="usuario[email]" placeholder="Email" required>
-        </div>
-          <input class="btn btn-success btn-block" type="submit" value="recuperar" (click)="login()">
-          <p class="texto-centrado">- ou -</p>
-          <p class="texto-centrado">
-            Volte à página de <a [routerLink]="['/login']" class="link-enderecado">login</a>
-          </p>
-      </form>
-    </div>
-  </div>
+  </body>
   <app-custom-footer></app-custom-footer>
 </ion-content>

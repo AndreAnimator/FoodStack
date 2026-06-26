@@ -5,6 +5,7 @@ import { FavoritosService } from 'src/app/services/favoritos.service';
     selector: 'app-perfil',
     templateUrl: './perfil.page.html',
     styleUrls: ['./perfil.page.scss'],
+    standalone: false,
 })
 export class PerfilPage implements OnInit {
 

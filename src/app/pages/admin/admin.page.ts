@@ -10,6 +10,7 @@ import { IngredientService } from 'src/app/services/ingrediente-service';
     selector: 'app-admin',
     templateUrl: './admin.page.html',
     styleUrls: ['./admin.page.scss'],
+    standalone: false,
 })
 export class AdminPage implements OnInit {
     exibirConteudo = false;

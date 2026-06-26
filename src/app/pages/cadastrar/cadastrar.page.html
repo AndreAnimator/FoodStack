@@ -4,69 +4,69 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <div id="pagina-cadastro" class="container">
-    <div class="cabecario">
-      <h1 class="titulo">Cadastrar</h1>
-      <h2 class="subtitulo">
-        Cadastre-se para poder salvar seus lanches e conferir depois!
-      </h2>
+  <body id="main">
+    <div id="pagina-cadastro" class="container">
+      <div class="form-cadastro">
+        <h1 class="titulo">Cadastrar</h1>
+        <h2 class="subtitulo">
+          Cadastre-se para poder salvar seus lanches e conferir depois!
+        </h2>
+        <form id="cadastro-usuario">
+          <div class="caixa-preenchimento">
+            <label for="nome-usuario">Nome</label>
+            <input
+              id="nome-usuario"
+              class="controle-form"
+              type="text"
+              value=""
+              name="usuario[nome]"
+              placeholder="Nome"
+            />
+          </div>
+          <div class="caixa-preenchimento">
+            <label for="sobrenome-usuario">Sobrenome</label>
+            <input
+              id="sobrenome-usuario"
+              class="controle-form"
+              type="text"
+              value=""
+              name="usuario[sobrneome]"
+              placeholder="Sobrenome"
+            />
+          </div>
+          <div class="caixa-preenchimento">
+            <label for="email-usuario">Email</label>
+            <input
+              id="email-usuario"
+              class="controle-form"
+              type="email"
+              value=""
+              name="usuario[email]"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div class="caixa-preenchimento">
+            <label for="senha-usuario">Senha</label>
+            <input
+              id="senha-usuario"
+              class="controle-form"
+              type="password"
+              value=""
+              name="senha[usuario]"
+              placeholder="Senha"
+              required
+            />
+          </div>
+          <input
+            class="btn btn-success btn-block"
+            type="submit"
+            value="cadastrar"
+            (click)="cadastrar()"
+          />
+        </form>
+      </div>
     </div>
-    <div class="form-cadastro">
-      <form id="cadastro-usuario">
-        <div class="caixa-preenchimento">
-          <label for="nome-usuario">Nome</label>
-          <input
-            id="nome-usuario"
-            class="controle-form"
-            type="text"
-            value=""
-            name="usuario[nome]"
-            placeholder="Nome"
-          />
-        </div>
-        <div class="caixa-preenchimento">
-          <label for="sobrenome-usuario">Sobrenome</label>
-          <input
-            id="sobrenome-usuario"
-            class="controle-form"
-            type="text"
-            value=""
-            name="usuario[sobrneome]"
-            placeholder="Sobrenome"
-          />
-        </div>
-        <div class="caixa-preenchimento">
-          <label for="email-usuario">Email</label>
-          <input
-            id="email-usuario"
-            class="controle-form"
-            type="email"
-            value=""
-            name="usuario[email]"
-            placeholder="Email"
-            required
-          />
-        </div>
-        <div class="caixa-preenchimento">
-          <label for="senha-usuario">Senha</label>
-          <input
-            id="senha-usuario"
-            class="controle-form"
-            type="password"
-            value=""
-            name="senha[usuario]"
-            placeholder="Senha"
-            required
-          />
-        </div>
-        <input
-          class="btn btn-success btn-block"
-          type="submit"
-          value="cadastrar"
-          (click)="cadastrar()"
-        />
-      </form>
-    </div>
-  </div>
+  </body>
   <app-custom-footer></app-custom-footer>
 </ion-content>

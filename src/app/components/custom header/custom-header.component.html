@@ -2,8 +2,39 @@
   <nav id="top_navbar" class="navbar fixed-top">
       <div class="container">
         <div onclick="irParaHome()">
-          <a class="navbar-logo" href="/" aria-label="FoodStack Home">FoodSTACK<!-- aqui eu boto a logo --></a>
+          <a class="navbar-logo" href="/" aria-label="FoodStack Home"><div class="food">food</div><div class="stack">stack</div><div class="icon-logo"></div><!-- aqui eu boto a logo --></a>
         </div>
+        <div class="container">
+          <input id="menu__toggle" type="checkbox" />
+          <label class="menu__btn" for="menu__toggle">
+            <span></span>
+          </label>
+          <div class="menu__box">
+            <li class="menu__item" (click)="irParaMontagem()"> <!--class="nav-item montagem-menu"--> 
+              <a class="link">Montar Lanches</a>  <!--class="nav-link"-->
+            </li>
+            <li class="menu__item" (click)="irParaHamburguer()">
+                <a class="link">Hamburguer</a>
+            </li>
+            <li class="menu__item" (click)="irParaHotDog()">
+                <a class="link">Cachorro-quente</a>
+            </li>
+            <li class="menu__item" (click)="irParaPizza()">
+                <a class="link">Pizza</a>
+            </li>
+            <li class="menu__item"> <!--class="nav-item"-->
+              <div> <!--KK fiquei o dia inteiro tentando resolver isso pra descobrir que n precisava fazer todos aqueles router module-->
+                <a class="link"><span class="logged-out" (click)="irParaLogin()">Login</span><span class="logged-in" (click)="irParaPerfil()">Conta</span></a> <!--class="nav-link"-->
+              </div>
+            </li>
+            <li class="menu__item">
+              <div>
+                <a class="link">Ajuda</a>
+              </div>
+            </li>
+          </div>
+        </div>
+
           <div class="navbar">  <!--id="top-nav"-->
               <ul class="lunch-navbar"> <!--id="top_nav"-->
                   <li class="item" (click)="irParaMontagem()"> <!--class="nav-item montagem-menu"--> 

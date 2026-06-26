@@ -1,60 +1,68 @@
 <ion-header>
-  <ion-toolbar>
     <app-custom-header></app-custom-header>
-  </ion-toolbar>
 </ion-header>
 <ion-content>
-  <div id="pagina-login" class="container">
-    <div class="cabecario">
-      <h1 class="titulo">Login</h1>
-      <h2 class="subtitulo">
-        Faça login para poder acessar seus lanches feitos e mais!
-      </h2>
+  <body id="main">
+    <div id="pagina-login" class="container">
+      <div class="form-login">
+        <h1 class="titulo">Login</h1>
+        <h2 class="subtitulo">
+          Faça login para poder acessar seus lanches feitos e mais!
+        </h2>
+        <form id="login-usuario" (ngSubmit)="login()">
+          <div class="caixa-preenchimento">
+            <label for="email-usuario">Email</label>
+            <input
+              id="email-usuario"
+              class="controle-form"
+              type="email"
+              [(ngModel)]="email"
+              name="usuario[email]"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div class="caixa-preenchimento">
+            <label for="senha-usuario">Senha</label>
+            <input
+              id="senha-usuario"
+              class="controle-form"
+              type="password"
+              [(ngModel)]="senha"
+              name="senha[usuario]"
+              placeholder="Senha"
+              required
+            />
+          </div>
+          <div class="caixa-preenchimento">
+            <input
+              id="remember-me"
+              class="controle-remember-me"
+              type="checkbox"
+              name="lembre[usuario]"
+              value="lembre"
+            />
+            <label for="remember-me"> Lembre-se de mim. </label>
+          </div>
+          <input class="btn btn-success btn-block" type="submit" value="login" />
+          <p class="texto-centrado">- ou -</p>
+          <p class="texto-centrado">
+            Novo?
+            <a [routerLink]="['/cadastrar']" class="link-enderecado">
+              Crie uma conta!
+            </a>
+          </p>
+          <p class="texto-centrado">
+            <a [routerLink]="['/recuperar-senha']" class="link-enderecado">
+              Esqueceu sua senha?
+            </a>
+          </p>
+          <div class="mensagem-erro" *ngIf="mensagemErro">
+            {{ mensagemErro }}
+          </div>
+        </form>
+      </div>
     </div>
-    <div class="form-login">
-      <form id="login-usuario" (ngSubmit)="login()">
-        <div class="caixa-preenchimento">
-          <label for="email-usuario">Email</label>
-          <input
-            id="email-usuario"
-            class="controle-form"
-            type="email"
-            [(ngModel)]="email"
-            name="usuario[email]"
-            placeholder="Email"
-            required
-          />
-        </div>
-        <div class="caixa-preenchimento">
-          <label for="senha-usuario">Senha</label>
-          <input
-            id="senha-usuario"
-            class="controle-form"
-            type="password"
-            [(ngModel)]="senha"
-            name="senha[usuario]"
-            placeholder="Senha"
-            required
-          />
-        </div>
-        <input class="btn btn-success btn-block" type="submit" value="login" />
-        <p class="texto-centrado">- ou -</p>
-        <p class="texto-centrado">
-          Novo?
-          <a [routerLink]="['/cadastrar']" class="link-enderecado">
-            Crie uma conta!
-          </a>
-        </p>
-        <p class="texto-centrado">
-          <a [routerLink]="['/recuperar-senha']" class="link-enderecado">
-            Esqueceu sua senha?
-          </a>
-        </p>
-        <div class="mensagem-erro" *ngIf="mensagemErro">
-          {{ mensagemErro }}
-        </div>
-      </form>
-    </div>
-  </div>
+  </body>
   <app-custom-footer></app-custom-footer>
 </ion-content>

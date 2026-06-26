@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
   selector: 'app-loader',
   templateUrl: './loader.page.html',
   styleUrls: ['./loader.page.scss'],
+  standalone: false,
 })
 export class LoaderPage implements OnInit {
 
