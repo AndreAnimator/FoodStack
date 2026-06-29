@@ -40,17 +40,25 @@ export class LoginPage implements OnInit {
         if (!this.email || !this.senha) {
             this.mensagemErro = 'Por favor, preencha todos os campos.';
         } else {
-            if (this.clienteService.login(this.email, this.senha)) {
-                this.email = "";
-                this.senha = "";
-                this.mensagemErro = " ";
-                this.router.navigate(['/home']);
-                const foo = <HTMLElement>document.querySelector("body");
-                foo.classList.add("conta");
-            }
-            else {
-                this.mensagemErro = 'Usuario ou senha inválidos';
-            }
+            this.clienteService.login(this.email, this.senha).subscribe({
+                next:(response: any)=>{
+                    if(response) {
+                        console.log("Tem resposta");
+                        this.email = "";
+                        this.senha = "";
+                        this.mensagemErro = " ";
+                        this.router.navigate(['/home']);
+                        const foo = <HTMLElement>document.querySelector("body");
+                        foo.classList.add("conta");
+                    }  else {
+                        console.log("Sem resposta");
+                        alert('Usuario ou senha inválidos');
+                    }
+                },
+                error:(error)=>{
+                    alert('Usuario ou senha inválidos');
+                }
+            });
         }
     }
 }
