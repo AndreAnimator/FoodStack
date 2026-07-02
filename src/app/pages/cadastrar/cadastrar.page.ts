@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { map } from 'rxjs';
 import { ClienteService } from 'src/app/services/cliente-service.service';
 @Component({
     selector: 'app-cadastrar',
@@ -9,47 +10,91 @@ import { ClienteService } from 'src/app/services/cliente-service.service';
     standalone: false,
 })
 export class cadastrarPage implements OnInit {
-
-    constructor(private router: Router, private clienteService: ClienteService, private formBuilder: FormBuilder) { }
-
+    mensagemErro: string = '';
+    nome: string;
+    sobrenome: string;
     email: string;
     senha: string;
-    mensagemErro: string = '';
+    signupForm : FormGroup;
 
-    cadastrarForm: FormGroup = this.formBuilder.group({
-        email: ['', Validators.required],
-        password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
-    });
-
-    ngOnInit() {
-        this.cadastrarForm = this.formBuilder.group({
-            email: ['', Validators.required],
-            password: ['', Validators.required]
+    constructor(private router: Router, private formBuilder: FormBuilder, private clienteService: ClienteService) { 
+        this.signupForm = new FormGroup({
+            name: new FormControl,
+            surname: new FormControl,
+            email: new FormControl,
+            password: new FormControl
         });
     }
 
+    ngOnInit(): void {
+        // throw new Error('Method not implemented.');
+        this.signupForm = this.formBuilder.group({
+            name: ['', Validators.required],
+            surname: ['', Validators.required],
+            email: ['',  Validators.compose([Validators.required, Validators.email])],
+            password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
+        });
+    }
+
+    get errorControl(){
+        return this.signupForm.controls;
+    }
+
     onSubmit() {
-        if (this.cadastrarForm.valid) {
+        if (this.signupForm.valid) {
             this.cadastrar();
         } else {
             // show error message
+            alert("campos preenchidos inválidos");
+            console.log("socorro")
+            console.log(this.signupForm)
         }
     }
 
     cadastrar() {
-        //if (!this.email || !this.senha) {
-        //    this.mensagemErro = 'Por favor, preencha todos os campos.';
-        //} else {
-        //    if (this.clienteService.cadastrar(this.email, this.senha)) {
-        //        this.email = "";
-        //        this.senha = "";
-        //        this.mensagemErro = " ";
-        //        
-        //    }
-        //    else {
-        //        this.mensagemErro = 'Usuario ou senha inválidos';
-        //    }
-        //}
-        this.router.navigate(['/login']);
+        console.log("Oporra");
+        this.clienteService.cadastrar(this.signupForm.value['name'], this.signupForm.value['surname'], this.signupForm.value['email'], this.signupForm.value['password'])
+        .subscribe(
+            /*
+            {
+            next:(response: any)=>{
+                console.log("Alou");
+                alert(response)
+                console.log("Teve resposta?");
+                console.log(response);
+                if(response) {
+                    console.log("Teve resposta");
+                    console.log(response);
+                    this.email = "";
+                    this.senha = "";
+                    this.sobrenome = "";
+                    this.nome = "";
+                    this.mensagemErro = " ";
+                    
+                }  else {
+                    console.log("Sem resposta");
+                    alert('Usuario ou senha inválidos');
+                }
+            },
+            error:(error)=>{
+                alert(error);
+                alert('Usuario ou senha inválidos');
+            }
+        }
+        */
+        data => {
+            console.log(data);
+            if (data == "You are now registered. Please log in") {
+                alert('Cadastro realizado com sucesso.');
+                this.router.navigate(['/home']);
+                const foo = <HTMLElement>document.querySelector("body");
+                foo.classList.add("conta");
+            }
+            else{
+                alert(data);
+            }
+            
+        }
+    );
     }
 }

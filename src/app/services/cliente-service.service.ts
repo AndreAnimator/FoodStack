@@ -30,8 +30,11 @@ export class ClienteService {
         )
     }
 
-    cadastrar(username: string, password: string): boolean {
-        this.users.push({ username, password })
-        return true;
+    cadastrar(name: string, surname: string, email: string, password: string) {
+        return this.http
+        .post(
+            `${environment.API_KEY}/signup`,
+            { name, surname, email, password }, {responseType: 'text'}
+        )
     }
 }

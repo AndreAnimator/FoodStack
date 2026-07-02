@@ -11,7 +11,7 @@
         <h2 class="subtitulo">
           Cadastre-se para poder salvar seus lanches e conferir depois!
         </h2>
-        <form id="cadastro-usuario">
+        <form id="cadastro-usuario" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
           <div class="caixa-preenchimento">
             <label for="nome-usuario">Nome</label>
             <input
@@ -21,8 +21,11 @@
               value=""
               name="usuario[nome]"
               placeholder="Nome"
+              required
+              formControlName="name"
             />
           </div>
+          <span *ngIf="signupForm.get('name')?.dirty && signupForm.get('name')?.errors?.['required']" class="error">Nome é obrigatório</span>
           <div class="caixa-preenchimento">
             <label for="sobrenome-usuario">Sobrenome</label>
             <input
@@ -32,8 +35,11 @@
               value=""
               name="usuario[sobrneome]"
               placeholder="Sobrenome"
+              required
+              formControlName="surname"
             />
           </div>
+          <span *ngIf="signupForm.get('surname')?.dirty && signupForm.get('surname')?.errors?.['required']" class="error">Sobrenome é obrigatório</span>
           <div class="caixa-preenchimento">
             <label for="email-usuario">Email</label>
             <input
@@ -44,8 +50,11 @@
               name="usuario[email]"
               placeholder="Email"
               required
+              formControlName="email"
             />
           </div>
+          <span *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.errors?.['required']" class="error">Email é obrigatório</span><br>
+          <span *ngIf="signupForm.get('email')?.dirty && signupForm.get('email')?.errors?.['email']" class="error">Formato de email inválido</span>
           <div class="caixa-preenchimento">
             <label for="senha-usuario">Senha</label>
             <input
@@ -56,13 +65,15 @@
               name="senha[usuario]"
               placeholder="Senha"
               required
+              formControlName="password"
             />
           </div>
+          <span *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.errors?.['required']" class="error">Senha é obrigatório</span><br>
+          <span *ngIf="signupForm.get('password')?.dirty && signupForm.get('password')?.errors?.['minlength']" class="error">Senha precisa de no mínimo 6 caracteres</span>
           <input
             class="btn btn-success btn-block"
             type="submit"
             value="cadastrar"
-            (click)="cadastrar()"
           />
         </form>
       </div>

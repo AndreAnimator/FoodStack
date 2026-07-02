@@ -3,4 +3,4 @@ node_modules
 *.pack
 *.json
 .angular
-./src/environments
+src/environments
